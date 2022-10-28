@@ -2,8 +2,6 @@ import 'number_converter.dart';
 
 /// this class used to convert
 /// between numbers type to all types
-/// @Author Henry Azer
-/// @since 28/10/2022
 class ProgrammerCalculator {
   /// convert number type to all types
   /// accept int type, string value and return map of results

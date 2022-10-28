@@ -2,7 +2,7 @@ import 'dart:math';
 
 /// this class used to convert
 /// between numbers types
-/// for generic usage
+/// lib for generic usage
 /// @Author Henry Azer
 /// @since 28/10/2022
 class NumberConverter {
