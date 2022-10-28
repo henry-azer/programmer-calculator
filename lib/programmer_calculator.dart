@@ -5,7 +5,6 @@ import 'number_converter.dart';
 /// @Author Henry Azer
 /// @since 28/10/2022
 class ProgrammerCalculator {
-
   /// convert number type to all types
   /// accept int type, string value and return map of results
   static Map convertToAllTypes(int type, String value) {
@@ -15,14 +14,19 @@ class ProgrammerCalculator {
 
     // create map and convert depend on type conversion
     Map<String, String> numberConversions = {};
-    if (type == 1) {
-      _convertFromHexadecimal(value, numberConversions);
-    } else if (type == 2) {
-      _convertFromDecimal(value, numberConversions);
-    } else if (type == 3) {
-      _convertFromOctal(value, numberConversions);
-    } else if (type == 4) {
-      _convertFromBinary(value, numberConversions);
+    switch (type) {
+      case 1:
+        _convertFromHexadecimal(value, numberConversions);
+        break;
+      case 2:
+        _convertFromDecimal(value, numberConversions);
+        break;
+      case 3:
+        _convertFromOctal(value, numberConversions);
+        break;
+      case 4:
+        _convertFromBinary(value, numberConversions);
+        break;
     }
 
     return numberConversions;
@@ -30,7 +34,8 @@ class ProgrammerCalculator {
 
   /// convert hexadecimal to all types
   /// accept string hexadecimal and map of numberConversions
-  static void _convertFromHexadecimal(String hexadecimal, Map<String, String> numberConversions) {
+  static void _convertFromHexadecimal(
+      String hexadecimal, Map<String, String> numberConversions) {
     numberConversions.addAll({
       "DEC": NumberConverter.convertHexadecimalToDecimal(hexadecimal),
       "BIN": NumberConverter.convertHexadecimalToBinary(hexadecimal),
@@ -40,7 +45,8 @@ class ProgrammerCalculator {
 
   /// convert decimal to all types
   /// accept string hexadecimal and map of numberConversions
-  static void _convertFromDecimal(String decimal, Map<String, String> numberConversions) {
+  static void _convertFromDecimal(
+      String decimal, Map<String, String> numberConversions) {
     numberConversions.addAll({
       "HEX": NumberConverter.convertDecimalToHexadecimal(decimal),
       "BIN": NumberConverter.convertDecimalToBinary(decimal),
@@ -50,7 +56,8 @@ class ProgrammerCalculator {
 
   /// convert octal to all types
   /// accept string hexadecimal and map of numberConversions
-  static void _convertFromOctal(String octal, Map<String, String> numberConversions) {
+  static void _convertFromOctal(
+      String octal, Map<String, String> numberConversions) {
     numberConversions.addAll({
       "HEX": NumberConverter.convertOctalToHexadecimal(octal),
       "BIN": NumberConverter.convertOctalToBinary(octal),
@@ -60,7 +67,8 @@ class ProgrammerCalculator {
 
   /// convert binary to all types
   /// accept string hexadecimal and map of numberConversions
-  static void _convertFromBinary(String binary, Map<String, String> numberConversions) {
+  static void _convertFromBinary(
+      String binary, Map<String, String> numberConversions) {
     numberConversions.addAll({
       "HEX": NumberConverter.convertBinaryToHexadecimal(binary),
       "DEC": NumberConverter.convertBinaryToDecimal(binary),
